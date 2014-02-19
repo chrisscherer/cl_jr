@@ -1,0 +1,24 @@
+<div class="container">
+  <a href="/">View Categories</a>
+  <form action='/posts/<%= @post.id %>/edit' method='post'>
+    <h2>Who are you?</h2>
+    <input type='text' name='name' placeholder='Name' value=<%=@post.name%>><br><br>
+    <h2>How tough are you?</h2>
+    <textarea rows='5' cols='50' name='description' placeholder='Why should we let you in to the Salty Spitoon?'><%=@post.description%></textarea><br><br>
+    <h2>What kind of tough are you?</h2>
+    <select name='category'>
+      <% @categories.each do |category| %>
+        <option>
+          <%= category.name%>
+        </option>
+      <% end %>
+    </select>
+    <h2>Where be you?</h2>
+    <input type='text' name='location' placeholder='Enter location' value=<%=@post.location%>><br><br>
+    <input type='submit' value='Submit'>
+  </form><br>
+  <form action='/posts/<%= @post.id %>/delete' method='post'>
+    <input type='submit' value='Delete'>
+  </form>
+</div>
+

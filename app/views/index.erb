@@ -1,0 +1,12 @@
+<div class="container">
+  <a href="/posts/new">Create new Post</a>
+  <h1>Welcome to Weeniehut Jr!</h1>
+
+  <h2>View some sample posts!</h2>
+
+  <ul>
+  <% @categories.each do |category| %>
+    <li><a href='categories/<%= category.id %>'><%= category.name %></a></li>
+  <% end %>
+</ul>
+</div>
